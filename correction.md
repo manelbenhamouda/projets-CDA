@@ -68,3 +68,30 @@
 
 ---
 
+
+
+## Diagramme : **Diagramme de cas d'utilisation**
+
+1. **Mauvaise Utilisation des Relations «include» et «extend»**
+   - **Problème** : Les relations d'inclusion et d'extension ne sont pas toujours utilisées correctement. Par exemple, "Ajouter des mangas à la base centrale" devrait être une relation d'inclusion plutôt qu'une extension.
+   - **Correction** : Utiliser «include» pour indiquer des fonctionnalités obligatoires et «extend» pour des fonctionnalités optionnelles ou conditionnelles.
+
+2. **Utilisation Incohérente des Noms d'Actions**
+   - **Problème** : Certains noms d'actions ne suivent pas une convention de nommage cohérente (par exemple, "Ajouter à la bibliothèque" vs "Ajouter des mangas à la base centrale").
+   - **Correction** : Harmoniser les noms d'actions pour qu'ils soient tous sous la forme « verbe + complément » (ex : "Ajouter un manga").
+
+3. **Mauvaise Définition des Rôles et des Acteurs**
+   - **Problème** : Le rôle d'« Invité » et de « Utilisateur » n'est pas clairement défini dans le diagramme. Les permissions et actions de chaque rôle doivent être plus précises.
+   - **Correction** : Clarifier les rôles en ajoutant une description des permissions pour chaque acteur (Invité, Utilisateur, Admin). Vérifie que chaque acteur est relié aux actions qui lui sont propres.
+
+4. **Répétition Inutile des Actions**
+   - **Problème** : Certaines actions sont répétées dans les sections "Gestion de la bibliothèque personnelle" et "Gestion Admin".
+   - **Correction** : Éviter la redondance en regroupant les actions similaires sous un même processus ou en les liant par une relation adéquate.
+
+5. **Manque d'Indications sur les Flux de Données**
+   - **Problème** : Les flèches indiquant les flux de données ne sont pas assez explicites sur les informations échangées entre les différentes entités.
+   - **Correction** : Ajouter des annotations ou des étiquettes aux flèches pour préciser le type d'informations transférées.
+
+6. **Aspect Visuel et Lisibilité**
+   - **Problème** : Le diagramme est un peu surchargé, ce qui peut nuire à sa lisibilité.
+   - **Correction** : Simplifier le design en utilisant moins de couleurs ou en réduisant le nombre de connexions croisées, afin de faciliter la compréhension.

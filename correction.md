@@ -43,7 +43,7 @@
 
 ---
 
-## Diagramme 4 : Activité de Réinitialisation du mot de passe (`Réinitialisation_mot_de_passe.png`)
+## Diagramme 4 : Activité de Réinitialisation du mot de passe
 
 ### Erreurs et améliorations :
 1. **Nom des conditions**  

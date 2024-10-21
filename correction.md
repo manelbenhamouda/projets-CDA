@@ -64,6 +64,6 @@
 
 3. **Relations entre acteurs et cas d'utilisation**
    - **Problème :** Les relations entre les acteurs et les cas d'utilisation ne sont pas clairement définies.
-   - **Correction :** Utiliser des lignes droites pour relier chaque acteur aux cas d'utilisation qu'il peut initier. Assurez-vous que chaque relation est clairement identifiable.
+   - **Correction :** Utiliser des lignes droites pour relier chaque acteur aux cas d'utilisation qu'il peut initier.
 
 ---

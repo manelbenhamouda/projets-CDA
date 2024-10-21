@@ -1,33 +1,27 @@
 # Corrections Détaillées des Diagrammes UML
 
-## Diagramme de Cas d'Utilisation 
+## Diagramme de Séquence pour la Modification de Commentaires (Modification_Comment_Sequence_Diagram.png)
 
-**Clarifie et distingue les rôles avec précision :**
-- **Admin** : Organise les actions de gestion et de modération en sous-groupes clairs sous "Gestion administrative" pour refléter correctement leur portée et hiérarchie.
-- **Utilisateur** : Regroupe les actions nécessitant une authentification sous "Gestion des skins".
-- **Visiteur** : Fusionne "Peut consulter les skins disponibles" et "Peut lire les commentaires sur les skins" en "Consulter skins et commentaires".
+**Correction :**
+- **Validation du Texte** : Ajoute une vérification explicite du texte du commentaire pour assurer qu'il respecte les critères définis (longueur, contenu approprié, etc.) avant d'effectuer la mise à jour dans la base de données.
 
-## Diagramme de Séquence pour la Modification de Commentaire 
+## Diagramme d'Activité pour la Publication de Skins (Publish_Skin_Activity_Diagram.png)
 
-**Insère une étape de validation du commentaire :**
-- Ajoute "Valider le commentaire" immédiatement avant "Mettre à jour le commentaire dans la base de données", pour t'assurer de la conformité des données.
+**Correction :**
+- **Validation des Champs** : Avant de sauvegarder le skin dans la base de données, vérifie que tous les champs du formulaire de publication soient complets. Redirige vers un message d'erreur si un champ requis est vide.
 
-**Spécifie les messages d'erreur selon le type d'erreur :**
-- Détaille les conditions d'erreur comme texte vide ou inapproprié et configure des messages d'erreur spécifiques pour chaque condition.
+## Diagramme de Séquence pour le Traitement des Signalements (Handle_Report_Sequence_Diagram.png)
 
-## Diagramme d'Activité pour la Soumission de Skin
+**Correction :**
+- **Validation des Signalements** : Intègre une étape de validation pour confirmer la légitimité d'un signalement avant de prendre des mesures. En cas de non-validité, indique le rejet du signalement à l'administrateur ou à l'utilisateur concerné.
 
-**Vérifie que tous les champs sont remplis avant la soumission :**
-- Intègre "Tous les champs sont-ils remplis ?" avant "Sauvegarder le skin dans la base de données".
+## Diagramme d'Activité pour les Modifications de Commentaires (Edit_Comment_Activity_Diagram.png)
 
-**Valide le format de l'image avant sauvegarde :**
-- Introduis "Vérifier le format de l'image" juste après son téléchargement pour t'assurer qu'elle répond aux critères acceptés.
+**Correction :**
+- **Accès et Permissions** : Assure que seuls les utilisateurs autorisés peuvent modifier les commentaires. Ajoute un message d'erreur pour les tentatives de modification non autorisées.
 
-## Diagramme d'Activité pour le Traitement des Signalements 
+## Diagramme de Séquence pour la Publication de Skins (Skin_Submission_Sequence_Diagram.png)
 
-**Clarifie le processus de traitement des signalements :**
-- Décris clairement les étapes décisionnelles après la sélection d'un signalement
-
-**Fournis un retour explicite à l'utilisateur après le traitement des signalements :**
-- Assure-toi d'inclure "Informer l'utilisateur du résultat" après chaque action prise sur un signalement, qu'il nécessite une suite ou non.
+**Correction :**
+- **Validation de l'Image** : Insère une étape pour vérifier que l'image téléchargée respecte les spécifications techniques requises (format, taille). Si l'image est non conforme, affiche un message d'erreur et interrompt le processus de soumission.
 

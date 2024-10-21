@@ -1,6 +1,6 @@
 # Corrections Détaillées des Diagrammes UML
 
-## Diagramme d'Activité Principal (`Activity_Diagram_Main.png`)
+## Diagramme d'Activité Principal
 
 ### Corrections :
 1. **Ajouter des étiquettes aux décisions :**
@@ -12,7 +12,7 @@
 3. **Améliorer la gestion des erreurs de connexion :**
    - Modifie l'action après un échec de connexion pour offrir des options spécifiques comme "Essayer de nouveau" ou "Récupérer mot de passe". Insère un processus décisionnel après "Afficher message d'erreur" pour ces options.
 
-## Diagramme de Séquence pour la Connexion (`Sequence_Diagram_Login.png`)
+## Diagramme de Séquence pour la Connexion 
 
 ### Corrections :
 1. **Détail des interactions serveur :**
@@ -21,7 +21,7 @@
 2. **Clarifier les conditions de réussite ou d'échec :**
    - Détaille les actions après l'échec de la connexion. Ajoute un retour au formulaire de connexion avec une option spécifique affichée pour les tentatives supplémentaires ou la récupération du mot de passe.
 
-## Diagramme de Cas d'Utilisation (`Use_Case_Diagram.png`)
+## Diagramme de Cas d'Utilisation 
 
 ### Corrections :
 1. **Spécifier les actions des rôles :**
@@ -30,7 +30,7 @@
 2. **Supprimer les doublons :**
    - Élimine les cas d'utilisation redondants. Si "Importer des recettes" et "Gérer les recettes" se chevauchent, combine-les en un seul cas d'utilisation nommé "Gérer les recettes", incluant l'importation comme sous-fonction.
 
-## Diagramme de Classes (`Class_Diagram.png`)
+## Diagramme de Classes
 
 ### Corrections :
 1. **Corriger les multiplicités :**

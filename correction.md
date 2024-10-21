@@ -5,14 +5,14 @@
 ## Diagramme d'activité : Création de compte
 **Fichier : `Diagramme_Activite_Creation_Compte.png`**
 
-- **Modification de la condition "Informations correctes ?" :**  
-  Remplace "Informations correctes ?" par "Vérification des informations obligatoires et du format des données : [Oui] [Non]". Cela rend le critère plus explicite en indiquant ce qui est vérifié par le système.
+- **Correction de la condition "Informations correctes ?" :**  
+  Actuellement, la question "Informations correctes ?" est trop vague. Remplace cette condition par "Vérification des informations requises (format, champ obligatoire, etc.) : Oui / Non". Cela clarifie ce que le système vérifie précisément.
 
-- **Réorganisation des éléments pour éviter les croisements :**  
-  Actuellement, les flèches se croisent, ce qui rend le flux difficile à suivre. Réarrange les éléments pour qu'ils soient disposés en séquence verticale, avec les décisions et les actions alignées de manière linéaire.
+- **Réorganisation du flux pour une meilleure lisibilité :**  
+  Les flèches se croisent, ce qui rend le diagramme difficile à lire. Réarrange les éléments de manière à ce que les décisions soient alignées verticalement et que les actions suivent une logique linéaire. Par exemple, place les vérifications à gauche, et les actions à droite.
 
-- **Ajout d'un point de terminaison :**  
-  Il manque un point final clairement identifiable (● noir). Ajoute ce symbole à la fin du flux pour indiquer la fin de l'activité.
+- **Ajout du symbole de terminaison :**  
+  Le diagramme ne montre pas clairement la fin du processus. Ajoute un symbole de fin (cercle noir plein) à la fin de chaque branche pour indiquer la terminaison du flux.
 
 ---
 
@@ -20,41 +20,41 @@
 **Fichier : `Diagramme_Cas_Utilisation_Fonctionnalites_Systeme.png`**
 
 - **Clarification des rôles des acteurs :**  
-  Les acteurs "Modérateur" et "Administrateur" semblent avoir des rôles similaires. Ajoute des cas spécifiques pour différencier leurs actions. Par exemple, "Administrateur" pourrait gérer les comptes d'utilisateurs tandis que "Modérateur" modère les discussions.
+  Les acteurs "Modérateur" et "Administrateur" n'ont pas de rôles distincts clairement définis dans le diagramme. Spécifie leurs actions spécifiques : "Administrateur" pourrait être responsable de la gestion des utilisateurs, tandis que "Modérateur" se concentre sur la modération des forums et des commentaires.
 
-- **Revue des relations `include` et `extend` :**  
-  Vérifie que les relations `include` sont bien utilisées pour des fonctionnalités obligatoires, et les relations `extend` pour les fonctionnalités optionnelles. Par exemple, "Gérer le contenu" pourrait être un `include` pour "Modérer les discussions".
+- **Revoir les relations `include` et `extend` :**  
+  Les relations `include` et `extend` sont mal utilisées. Utilise `include` pour les fonctionnalités qui sont toujours nécessaires (obligatoires), et `extend` pour les options supplémentaires. Par exemple, la fonctionnalité "Créer un forum" pourrait inclure "Vérifier les droits d'accès".
 
-- **Ajout de descriptions pour les cas d'utilisation :**  
-  Ajoute une brève description à chaque cas d'utilisation pour préciser ce qu'il couvre. Cela aidera à clarifier les actions possibles pour chaque acteur.
-
----
-
-## Diagramme de séquence : Modération de commentaire
-**Fichier : `Diagramme_Sequence_Moderation_Commentaire.png`**
-
-- **Ajout d'une étape pour l'analyse du contenu :**  
-  Après l'étape "Demande de validation", ajoute une étape "Analyse du contenu par le modérateur" avant "Valide le commentaire". Cela montre clairement le processus de modération.
-
-- **Détail des alternatives en cas de rejet :**  
-  Ajoute un bloc `alt` pour gérer les scénarios d'échec si le commentaire est rejeté. Indique les actions suivantes : "Informer l'utilisateur du rejet" et "Afficher la raison du rejet".
-
-- **Ajout de messages retour :**  
-  Assure-toi que chaque interaction a un message de retour correspondant. Par exemple, ajoute un retour au créateur du contenu pour indiquer que le commentaire a été validé ou rejeté.
+- **Ajout de descriptions aux cas d'utilisation :**  
+  Ajoute une courte description sous chaque ellipse représentant les cas d'utilisation pour clarifier les actions couvertes. Par exemple, pour "Gérer le contenu", ajoute "Ajout, modification ou suppression du contenu par l'administrateur".
 
 ---
 
-## Diagramme de classes : Gestion des utilisateurs
-**Fichier : `Diagramme_Classes_Gestion_Utilisateurs.png`**
+## Diagramme de séquence : Publication de commentaire
+**Fichier : `Diagramme_Sequence_Publication_Commentaire.png`**
 
-- **Remplacement de la relation "choix" par de l'héritage :**  
-  La relation "choix" entre "User" et les sous-classes n'est pas une norme UML standard. Remplace cette relation par une relation d'héritage pour indiquer clairement la spécialisation des sous-classes.
+- **Ajout d'une vérification explicite avant la publication :**  
+  Ajoute une étape pour la vérification du contenu du commentaire par le système avant de l'envoyer au modérateur. Par exemple, insère "Vérifier le format et les mots interdits dans le commentaire".
 
-- **Ajout de méthodes pour les rôles :**  
-  Les classes "CréateurDeContenu" et "Entreprise" manquent de méthodes spécifiques. Ajoute des méthodes comme `créerContenu()`, `supprimerContenu()`, ou `contacterEntreprise()` pour rendre les rôles plus explicites.
+- **Détail des cas alternatifs avec un bloc `alt` :**  
+  Les scénarios alternatifs ne sont pas assez détaillés. Ajoute un bloc `alt` avec deux scénarios : "Commentaire approuvé" et "Commentaire rejeté". Indique clairement les messages envoyés à l'utilisateur dans chaque cas.
 
-- **Révision des cardinalités :**  
-  Vérifie que les cardinalités indiquées respectent les règles métiers. Par exemple, assure-toi que la relation entre "Administrateur" et "User" reflète le bon nombre de connexions possibles.
+- **Ajouter un message retour après l'approbation ou le rejet :**  
+  Pour chaque action, ajoute une ligne de retour vers l'utilisateur ou le créateur du contenu pour indiquer si le commentaire a été validé ou rejeté. Par exemple, ajoute "Retour de l'information : Commentaire validé" ou "Retour : Commentaire rejeté avec message d'explication".
+
+---
+
+## Diagramme de classes : Gestion des utilisateurs et rôles
+**Fichier : `Diagramme_Classes_Gestion_Utilisateurs_Roles.png`**
+
+- **Remplacement des relations "choix" par une hiérarchie d'héritage :**  
+  Les relations "choix" ne respectent pas les normes UML. Utilise une hiérarchie d'héritage pour montrer les spécialisations de la classe "User". Par exemple, "CréateurDeContenu" et "Entreprise" devraient hériter de la classe "User".
+
+- **Ajouter des méthodes spécifiques aux sous-classes :**  
+  Les classes "CréateurDeContenu" et "Entreprise" doivent avoir des méthodes spécifiques pour refléter leur rôle. Par exemple, ajoute `planifierContenu()` pour "CréateurDeContenu" et `contacterEntreprise()` pour "Entreprise".
+
+- **Revoir les cardinalités pour s'assurer de leur exactitude :**  
+  Les cardinalités indiquées sont floues et doivent être révisées. Vérifie qu'elles respectent la logique du modèle. Par exemple, la relation entre "Administrateur" et "User" doit être représentée par une cardinalité qui reflète le nombre d'utilisateurs gérés par un administrateur.
 
 ---
 

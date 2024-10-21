@@ -56,7 +56,7 @@
 
 1. **Associations entre classes**
    - **Problème :** Les relations entre `Auteur`, `Admin`, et `Utilisateur` ne sont pas clairement définies.
-   - **Correction :** Vérifiez et ajustez les relations pour vous assurer qu'elles représentent correctement les associations souhaitées.
+   - **Correction :** Vérifies et ajustes les relations pour qu'elles représentent correctement les associations souhaitées.
 
 2. **Visibilité des méthodes**
    - **Problème :** La visibilité des méthodes (public, private) n'est pas indiquée.

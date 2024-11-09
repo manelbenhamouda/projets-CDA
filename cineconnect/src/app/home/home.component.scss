@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== BASE ===============*/
+
+.carousel-item img {
+    object-fit: cover;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #007bff;
+}
+.movie-card {
+    background-color: #f0f3fc;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 7px 10px 15px rgb(0, 0, 0);
+    text-align: center;
+  
+    .card-img-top {
+      height: 150px;
+      object-fit: cover;
+      border-bottom: 1px solid #000000;
+    }
+  
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin: 10px 0 5px;
+    }
+  
+    .card-text {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+  
+    .stars {
+      color: #ffc107;
+    }
+  
+    .btn-dark {
+      font-size: 14px;
+      padding: 5px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+    }
+  }
+  
